@@ -1,0 +1,30 @@
+<div class="row">
+
+  <div class="span2">
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well"}) do |f| %>
+
+      <fieldset>  
+      <legend>Iniciar Sesión</legend>
+
+      <%= f.input :email, autofocus: true %>
+      <%= f.input :password, autocomplete: "off" %>
+
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %></div>
+        <% end -%>
+
+        <div><%= f.button :submit, "Iniciar Sesión" %></div>
+   
+
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </fieldset>   
+  </div>
+
+  <div class="span8">
+    <h2>Bienvenido a Hhbook, tus datos estan seguros con nosotros</h2>
+  </div>
+
+</div>
